@@ -95,7 +95,12 @@ python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
+# Windows
+copy .env.example .env
+
+# macOS / Linux
 cp .env.example .env
+
 # edit .env if your Postgres credentials differ from the defaults
 
 alembic upgrade head             # run migrations
@@ -111,7 +116,13 @@ ReDoc: `http://localhost:8000/redoc`
 ```bash
 cd frontend
 npm install
+
+# Windows
+copy .env.local.example .env.local
+
+# macOS / Linux
 cp .env.local.example .env.local
+
 npm run dev
 ```
 
