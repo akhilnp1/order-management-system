@@ -101,6 +101,13 @@ copy .env.example .env
 # macOS / Linux
 cp .env.example .env
 
+# If running locally (without Docker), edit .env:
+
+DATABASE_URL=postgresql+asyncpg://postgres:<your_password>@localhost:5432/orders_db
+SYNC_DATABASE_URL=postgresql+psycopg2://postgres:<your_password>@localhost:5432/orders_db
+
+# If using Docker, keep the default value (host = db).
+
 # edit .env if your Postgres credentials differ from the defaults
 
 alembic upgrade head             # run migrations
